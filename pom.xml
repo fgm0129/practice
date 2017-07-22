@@ -12,6 +12,8 @@
         <module>algorithm</module>
         <module>thread</module>
         <module>design-pattern</module>
+        <module>spring</module>
+        <module>hack</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +43,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>2.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>19.0-rc2</version>
             </dependency>
 
         </dependencies>
