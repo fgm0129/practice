@@ -5,7 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by fgm on 2017/7/16.
- * spring处理自定义注解的注解
+ *
+ * 试验:通过spring bean的初始化,归类特定类型的bean
+ * JobHandlerRepository 用于收集带特定注解的bean,可以用来处理特定类型的事件
  *
  *
  */
