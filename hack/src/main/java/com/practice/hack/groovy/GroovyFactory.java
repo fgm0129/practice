@@ -14,7 +14,8 @@ import java.lang.reflect.Modifier;
 
 /**
  * Created by fgm on 2017/7/22.
- * 根据
+ * 1、由 GroovyClassLoader 实例化源码到具体的bean
+ * 2、动态注入生成bean的属性
  *
  *
  */

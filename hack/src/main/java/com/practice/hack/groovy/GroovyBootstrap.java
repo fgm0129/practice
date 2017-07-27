@@ -5,10 +5,10 @@ import com.practice.base.SpringBootstrapBase;
 
 /**
  * Created by fgm on 2017/7/22.
+ * 启动类:利用 GroovyClassLoader 动态实例化源码对应类,并将spring的bean注册到源码实例中,做到业务动态执行
+ *
  */
 public class GroovyBootstrap extends SpringBootstrapBase {
-
-
 
 
     public static void main(String[] args) throws Exception {
@@ -34,8 +34,11 @@ public class GroovyBootstrap extends SpringBootstrapBase {
                 "        return SUCCESS;\n" +
                 "    }\n" +
                 "}";
+
         GroovyFactory groovyFactory=GroovyFactory.getInstance();
+        //源码实例化成bean
         IJobHandler jobHandler=groovyFactory.loadJobHandler(sourceCode);
+        //执行调用
         jobHandler.execute("Hello World,Hello Groovy!");
 
     }
