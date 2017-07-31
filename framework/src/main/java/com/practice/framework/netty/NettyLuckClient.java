@@ -21,7 +21,7 @@ public class NettyLuckClient {
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
-                    .handler(new NettyLuckInitializer());
+                    .handler(new NettyLuckServerInitializer());
 
             // Start the connection attempt.
             Channel ch = b.connect("127.0.0.1", 8888).sync().channel();

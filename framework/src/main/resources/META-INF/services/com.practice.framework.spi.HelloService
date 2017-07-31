@@ -1,0 +1,4 @@
+#impl1
+com.practice.framework.spi.impl.HelloServiceImpl1
+#impl2
+com.practice.framework.spi.impl.HelloServiceImpl2

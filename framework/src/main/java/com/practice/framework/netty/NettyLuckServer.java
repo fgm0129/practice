@@ -29,7 +29,9 @@ public class NettyLuckServer {
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)  // 指定是一个NIO连接通道
                     .handler(new LoggingHandler(LogLevel.INFO))
-                    .childHandler(new NettyLuckInitializer());
+                    .childHandler(new NettyLuckServerInitializer());
+
+
             // 绑定对应的端口号,并启动开始监听端口上的连接
             Channel ch = serverBootstrap.bind(PORT).sync().channel();
 
@@ -43,6 +45,8 @@ public class NettyLuckServer {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
+
+
 
 
     }

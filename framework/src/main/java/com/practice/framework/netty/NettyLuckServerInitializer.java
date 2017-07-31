@@ -8,7 +8,7 @@ import io.netty.channel.socket.SocketChannel;
 /**
  * Created by fgm on 2017/7/26.
  */
-public class NettyLuckInitializer  extends ChannelInitializer<SocketChannel> {
+public class NettyLuckServerInitializer extends ChannelInitializer<SocketChannel> {
 
     private static final LuckEncoder ENCODER = new LuckEncoder();
 
@@ -17,6 +17,6 @@ public class NettyLuckInitializer  extends ChannelInitializer<SocketChannel> {
         ChannelPipeline channel=socketChannel.pipeline();
         channel.addLast(ENCODER);
         channel.addLast(new LuckDecoder());
-        channel.addLast(new NettyLuckHandler());
+        channel.addLast(new NettyLuckServerHandler());
     }
 }
