@@ -18,7 +18,6 @@ public class NettyLuckClientInitializer extends ChannelInitializer<SocketChannel
         // 这里必须给每个Handler都添加一个独立的Decoder.
         pipeline.addLast(ENCODER);
         pipeline.addLast(new LuckDecoder());
-
         // and then business logic.
         pipeline.addLast(new NettyLuckClientHandler());
     }
