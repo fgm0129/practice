@@ -24,6 +24,14 @@ public class WebUtils {
         map.put(DATA,message);
         return new ResponseEntity(map, HttpStatus.OK);
     }
+
+    public static ResponseEntity<Map<String,Object>> result(Object object){
+        Map<String,Object> map= Maps.newHashMap();
+        map.put(CODE,Result.SUCCESS.getCode());
+        map.put(DATA,object);
+        return new ResponseEntity(map, HttpStatus.OK);
+    }
+
     public static ResponseEntity<Map<String,Object>> success(String message){
         Map<String,Object> map= Maps.newHashMap();
         map.put(CODE,Result.SUCCESS.getCode());

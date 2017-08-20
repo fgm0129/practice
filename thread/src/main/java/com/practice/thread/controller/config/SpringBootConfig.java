@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 @ImportResource("classpath:applicationContext.xml")
-@ComponentScan("com.practice.thread")
+@ComponentScan(value = {"com.practice.thread","com.practice.hack.changelog"})
 public class SpringBootConfig  extends WebMvcConfigurerAdapter{
 
     public void addViewControllers(ViewControllerRegistry registry) {
