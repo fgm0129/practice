@@ -33,7 +33,7 @@ public class EchoServer {
 
     public  void start() throws Exception {
         final EchoServerHandler serverHandler=new EchoServerHandler();
-        EventLoopGroup group=new NioEventLoopGroup();
+        EventLoopGroup group=new NioEventLoopGroup(2);
         try{
             ServerBootstrap b=new ServerBootstrap();
             b.group(group).channel(NioServerSocketChannel.class)

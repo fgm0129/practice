@@ -17,6 +17,8 @@
         <module>base</module>
         <module>rpc</module>
         <module>framework</module>
+        <module>util</module>
+        <module>hadoop</module>
     </modules>
 
     <dependencyManagement>

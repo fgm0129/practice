@@ -96,7 +96,6 @@ public class ChangeLogLevelProcessUnit {
                 return getLoggerList();
             } else if ("set".equals(opType.toLowerCase())) {
                 JsonNode loggerListJson = jsonNode.get("loggerList");
-                // JSONArray loggerListJson = invokeData.getJSONArray("loggerList");
                 return setLogLevel(loggerListJson);
             } else {
                 throw new RuntimeException(String.format("未知指令 : %s", opType));
@@ -114,9 +113,6 @@ public class ChangeLogLevelProcessUnit {
      * @return
      */
     private String getLoggerList() {
-//        JSONObject result = new JSONObject();
-//        result.put("logFramework", logFrameworkType);
-//        JSONArray loggerList = new JSONArray();
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -124,8 +120,6 @@ public class ChangeLogLevelProcessUnit {
         ArrayNode arrayNode = objectMapper.createArrayNode();
 
         for (ConcurrentMap.Entry<String, Object> entry : loggerMap.entrySet()) {
-//            JSONObject loggerJSON = new JSONObject();
-//            loggerJSON.put("loggerName", entry.getKey());
             ObjectNode loggerJSON = objectMapper.createObjectNode();
             loggerJSON.put("loggerName", entry.getKey());
 
@@ -143,7 +137,6 @@ public class ChangeLogLevelProcessUnit {
             }
             arrayNode.add(loggerJSON);
         }
-
         objectNode.put("loggerList", arrayNode);
         LOG.info("getLoggerList: result={}", objectNode.toString());
         return objectNode.toString();

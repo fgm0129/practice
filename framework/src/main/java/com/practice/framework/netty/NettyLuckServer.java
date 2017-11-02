@@ -19,7 +19,7 @@ public class NettyLuckServer {
 
     public static void main(String[] args) throws InterruptedException {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup(3);
         try{
             ServerBootstrap serverBootstrap = new ServerBootstrap();
 

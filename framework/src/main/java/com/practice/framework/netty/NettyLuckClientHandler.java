@@ -17,7 +17,7 @@ public class NettyLuckClientHandler extends SimpleChannelInboundHandler<LuckMess
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
             int version = 1;
             String sessionId = UUID.randomUUID().toString();
-            String content = "I'm the luck protocol!";
+            String content = "I'm the luck protocol,hello world ,hello lucky! the  content is to long to read finished,hahahhahahahahaha.";
             LuckHeader header = new LuckHeader(version, content.length(), sessionId);
             LuckMessage message = new LuckMessage(header, content);
             ctx.writeAndFlush(message);
