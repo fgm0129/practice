@@ -137,7 +137,7 @@ public class ChangeLogLevelProcessUnit {
             }
             arrayNode.add(loggerJSON);
         }
-        objectNode.put("loggerList", arrayNode);
+        objectNode.set("loggerList", arrayNode);
         LOG.info("getLoggerList: result={}", objectNode.toString());
         return objectNode.toString();
     }

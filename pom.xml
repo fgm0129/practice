@@ -19,6 +19,7 @@
         <module>framework</module>
         <module>util</module>
         <module>hadoop</module>
+        <module>java8</module>
     </modules>
 
     <dependencyManagement>

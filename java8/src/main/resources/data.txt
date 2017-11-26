@@ -1,0 +1,5 @@
+hello java8
+hello lambda
+hello fangguangming
+hello hadoop
+good morning

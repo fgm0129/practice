@@ -13,6 +13,7 @@ public class HelloJobHandler extends IJobHandler {
     private static  Logger log= LoggerFactory.getLogger(HelloJobHandler.class);
     @Autowired
     private BusinessExecutor businessExecutor;
+    @Override
     public String execute(String... params) throws Exception {
         log.info("before execute helloJobBean");
         businessExecutor.execute(params);
