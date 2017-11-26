@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 /**
  * Created by fgm on 2017/11/19.
  */
-public class Test2 {
+public class Charter2 {
 
 
     private static final Gson gson=new Gson();
@@ -39,7 +39,7 @@ public class Test2 {
     private static final String rootPath;
 
     static {
-        rootPath= LambdaTest.class.getResource("/").getPath();
+        rootPath= Charter1.class.getResource("/").getPath();
 
     }
 

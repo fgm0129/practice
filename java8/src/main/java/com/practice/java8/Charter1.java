@@ -11,15 +11,11 @@ import com.practice.java8.model.Orange;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
 
@@ -28,7 +24,7 @@ import static java.util.Comparator.comparing;
  * @author fgm
 
  */
-public class LambdaTest {
+public class Charter1 {
     private static List<Apple> appleList;
     private static String rootPath;
     private static Gson gson=new Gson();
@@ -48,7 +44,7 @@ public class LambdaTest {
 
     static{
         appleList= Lists.newArrayList(new Apple(10,"red"),new Apple(15,"green"),new Apple(20,"green"),new Apple(18,"red"));
-        rootPath= LambdaTest.class.getResource("/").getPath();
+        rootPath= Charter1.class.getResource("/").getPath();
         map= Maps.newHashMap();
         map.put("orange", Orange::new);
         map.put("apple",Apple::new);

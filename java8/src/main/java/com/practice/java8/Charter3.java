@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * Created by fgm on 2017/11/6.
  * @author fgm
  */
-public class StreamTest {
+public class Charter3 {
 
     private static Gson gson=new Gson();
 

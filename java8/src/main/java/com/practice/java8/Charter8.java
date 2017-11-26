@@ -36,7 +36,7 @@ public class Charter8 {
 
     private static final String rootPath;
     static {
-        rootPath= LambdaTest.class.getResource("/").getPath();
+        rootPath= Charter1.class.getResource("/").getPath();
     }
 
 
