@@ -21,9 +21,9 @@ public class RpcFramework {
     private static  boolean toStop=false;
     private static String stopReason=null;
 
-    public void stop(String stopReason){
-        this.toStop=true;
-        this.stopReason=stopReason;
+    public void stop(String reason){
+        toStop=true;
+        stopReason=reason;
     }
 
 
@@ -31,8 +31,9 @@ public class RpcFramework {
         if(service==null){
             throw new IllegalArgumentException("export service cannot not be null!");
         }
-        if (port <= 0 || port > 65535)
+        if (port <= 0 || port > 65535) {
             throw new IllegalArgumentException("Invalid port " + port);
+        }
 
         final ServerSocket serverSocket=new ServerSocket(port);
         while(!toStop){
@@ -89,12 +90,15 @@ public class RpcFramework {
         if(interfaceClass==null){
             throw new IllegalArgumentException("interfaceClass cannot be null!");
         }
-        if (! interfaceClass.isInterface())
+        if (! interfaceClass.isInterface()) {
             throw new IllegalArgumentException("The " + interfaceClass.getName() + " must be interface class!");
-        if (host == null || host.length() == 0)
+        }
+        if (host == null || host.length() == 0) {
             throw new IllegalArgumentException("Host == null!");
-        if (port <= 0 || port > 65535)
+        }
+        if (port <= 0 || port > 65535) {
             throw new IllegalArgumentException("Invalid port " + port);
+        }
 
 
         return  (T)Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[]{interfaceClass}, new InvocationHandler() {
@@ -128,6 +132,26 @@ public class RpcFramework {
 
 
     }
+
+    public static <T> T refer2(final Class<T> interfaceClass, final String host, final int port) throws Exception{
+        if(interfaceClass==null){
+            throw new IllegalArgumentException("interfaceClass cannot be null!");
+        }
+        if (! interfaceClass.isInterface()) {
+            throw new IllegalArgumentException("The " + interfaceClass.getName() + " must be interface class!");
+        }
+        if (host == null || host.length() == 0) {
+            throw new IllegalArgumentException("Host == null!");
+        }
+        if (port <= 0 || port > 65535) {
+            throw new IllegalArgumentException("Invalid port " + port);
+        }
+
+
+        return null;
+
+    }
+
 
 
 

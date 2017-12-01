@@ -1,5 +1,6 @@
 package com.practice.rpc.test;
 
+import com.practice.api.HelloService;
 import com.practice.rpc.simple.RpcFramework;
 
 /**
@@ -13,7 +14,7 @@ public class Client {
         System.out.println(result);
 
 
-        service.execute("执行命令");
+        service.echo();
     }
 
 }

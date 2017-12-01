@@ -16,7 +16,5 @@ public class LuckEncoder extends MessageToByteEncoder<LuckMessage> {
         out.writeInt(header.getContentLength());
         out.writeBytes(header.getSessionId().getBytes());
         out.writeBytes(luckMessage.getContent().getBytes());
-
-
     }
 }

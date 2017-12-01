@@ -1,5 +1,6 @@
 package com.practice.rpc.test;
 
+import com.practice.api.HelloService;
 import com.practice.rpc.simple.RpcFramework;
 import com.practice.rpc.test.impl.HelloServiceImpl;
 

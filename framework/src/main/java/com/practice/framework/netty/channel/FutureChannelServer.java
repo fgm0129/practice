@@ -26,7 +26,7 @@ public class FutureChannelServer {
 
 
         serverBootstrap.channel(NioServerSocketChannel.class)
-                       .childHandler(new NettyLuckServerInitializer());;
+                       .childHandler(new NettyLuckServerInitializer());
 
         Channel ch = serverBootstrap.bind(8888).sync().addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) throws Exception {

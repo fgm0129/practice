@@ -20,6 +20,8 @@
         <module>util</module>
         <module>hadoop</module>
         <module>java8</module>
+        <module>service-api</module>
+        <module>api</module>
     </modules>
 
     <dependencyManagement>
