@@ -14,9 +14,9 @@ public class DecoderHandler extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
 
-        if(byteBuf.readableBytes()==0){
-            return;
-        }
+//        if(byteBuf.readableBytes()==0){
+//            return;
+//        }
         byte[] data=new byte[byteBuf.readableBytes()];
         byteBuf.readBytes(data);
         Object obj = ByteObjConverter.byteToObject(data);
@@ -24,10 +24,12 @@ public class DecoderHandler extends ByteToMessageDecoder {
 
     }
 
+    @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
 
 
         //super.channelReadComplete(ctx);
+       // ctx.channel().disconnect().sync();
         ctx.channel().disconnect().sync();
 
     }

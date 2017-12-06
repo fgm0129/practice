@@ -47,9 +47,7 @@ public class ServerHandler  extends SimpleChannelInboundHandler<RequestBean> {
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-//        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)
-//                .addListener(ChannelFutureListener.CLOSE);
-        ctx.channel().disconnect().sync();
+       // ctx.channel().disconnect().sync();
 
     }
 }
