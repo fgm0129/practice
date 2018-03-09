@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -79,19 +81,23 @@ public class Charter8 {
 
         //charter8.testValidationStrategy();
         //testStreamIterator();
+        //int head= intStream.findFirst().getAsInt();
+        //IntStream filtered=tail(numbers()).filter(n->n%head!=0);
+
         IntStream intStream=tail(numbers());
-        int head= intStream.findFirst().getAsInt();
-        IntStream filtered=tail(numbers()).filter(n->n%head!=0);
+       // System.out.println(intStream.findFirst().getAsInt());
 
-        System.out.println(head);
+        intStream.limit(100).asLongStream().forEach(x->{
+            System.out.println(x);
+        });
 
-        System.out.println();
+        testChain();
 
 
     }
 
     static IntStream numbers(){
-        return IntStream.iterate(2, n -> n + 1);
+        return IntStream.iterate(0, n -> n + 1);
     }
 
     static IntStream tail(IntStream numbers){
@@ -133,6 +139,18 @@ public class Charter8 {
 
 //       List<Integer> list=stream.collect(Collectors.toList());
 //        System.out.println(list.size());
+
+    }
+
+
+    public static void testChain(){
+        UnaryOperator<String> headerProcessing=(String text)->"From Raoul and Alan "+text;
+        UnaryOperator<String> spellCheckerProcessing=(String text)->text.replaceAll("labda","lambda");
+        Function<String,String> pipeLine=headerProcessing.andThen(spellCheckerProcessing);
+        String result=pipeLine.apply("Aren't labda really sexy?!!");
+        System.out.println(result);
+
+
 
     }
 
